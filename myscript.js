@@ -5,10 +5,62 @@ let board = [
 ]
 
 
-
-function press(cellNO) {
+let turn = "X"
+function press(x, y) {
 
     // Do stuff
-    console.log(cellNO)
-    
+    // console.log(x, y)
+    if (turn == "X") {
+        turn = "O"
+    } else { turn = "X" }
+
+    board[x][y] = turn;
+    let cell = document.getElementById(`${x},${y}`);
+    cell.innerText = turn;
+    console.log(x, y)
+
+    if (board[0][0] == turn && board[0][1] == turn && board[0][2] == turn) {
+
+        document.getElementById("status").innerText = ` ${turn} is the winner `
+    }
+
+
+    if (board[1][0] == turn && board[1][1] == turn && board[1][2] == turn) {
+
+        document.getElementById("status").innerText = ` ${turn} is the winner `
+    }
+    if (board[2][0] == turn && board[2][1] == turn && board[2][2] == turn) {
+
+        document.getElementById("status").innerText = ` ${turn} is the winner `
+    }
+    ///////////////////////////////////////////////////////////////////////////////
+    if (board[0][0] == turn && board[1][0] == turn && board[2][0] == turn) {
+
+        document.getElementById("status").innerText = ` ${turn} is the winner `
+    }
+    if (board[0][1] == turn && board[1][1] == turn && board[2][1] == turn) {
+
+        document.getElementById("status").innerText = ` ${turn} is the winner `
+    }
+    if (board[0][2] == turn && board[1][2] == turn && board[2][2] == turn) {
+
+        document.getElementById("status").innerText = ` ${turn} is the winner `
+    }
+    /////////////////////////////////////////////////////////////////////////////
+    if (board[0][2] == turn && board[1][1] == turn && board[2][0] == turn) {
+
+        document.getElementById("status").innerText = ` ${turn} is the winner `
+    }
+    if (board[0][0] == turn && board[1][1] == turn && board[2][2] == turn) {
+
+        document.getElementById("status").innerText = ` ${turn} is the winner `
+    }
+
+
+
+
+
+
+
+
 }
